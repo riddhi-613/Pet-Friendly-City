@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet-Friendly City</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+          <div class="logo">🐾 Pet-Friendly City</div>
+          <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#impact">Impact</a>
+          </nav>
+        </div>
+      </header>             
+      
+  <header class="hero">
+    <h1>Welcome to the Pet-Friendly City 🐾</h1>
+    <p>Creating a world where every paw matters</p>
+
+  </header>
+
+  <main>
+    <div class="cta-buttons">
+        <button onclick="scrollToSection('volunteer')">Join the Movement</button>
+        <button onclick="scrollToSection('volunteer')">Volunteer Now</button>
+        <button onclick="scrollToSection('about')">Learn More</button>
+      </div>
+    <section id="about">
+        <section id="about">
+        <h2>About the Campaign</h2>
+        <p>
+          <strong>Pet-Friendly City</strong> is a heartfelt initiative by <strong>CollegeTips.in</strong>, India’s most loved student community. 
+          We're on a mission to build a future where pets aren't just tolerated—they're celebrated, protected, and truly welcomed into our urban lives.
+        </p>
+        <p>
+          As we launch this campaign, we're inviting students, animal lovers, and change-makers to join hands and create pet-positive spaces across cities. 
+          Whether it's advocating for pet-friendly parks, organizing adoption drives, or simply spreading awareness—every small act makes a big difference.
+        </p>
+        <p>
+          Together, let’s transform our cities into safe, joyful havens for every paw and tail. 💛🐾
+        </p>
+    </section>
+    </section>
+
+    <section id="volunteer">
+        <h2>Volunteer Form</h2>
+        <form id="volunteer-form" class="form-container">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+      
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required placeholder="Enter your city">
+          </div>
+      
+          <div class="form-group">
+            <label for="role">Role Preference:</label>
+            <select id="role" name="role">
+            <option value="default">Choose a role</option>
+              <option value="Event Organizer">Event Organizer</option>
+              <option value="Pet Care Assistant">Pet Care Assistant</option>
+              <option value="Social Media Volunteer">Social Media Volunteer</option>
+            </select>
+          </div>
+      
+          <button type="submit" class="submit-btn">Submit</button>
+      
+          <div id="success-message" class="success-message" style="display: none;">
+            Thank you for volunteering! We'll get in touch soon. 😊
+          </div>
+        </form>
+      </section>
+      
+
+    <section id="impact">
+        <h2>Impact Stories</h2>
+        <div class="stories">
+      
+          <article class="story-card">
+            <h3>From Alley Kittens to Lifelong Commitment</h3>
+            <p>Steve Pack’s journey began when he discovered two orphaned kittens near his home. With help from a local rescue, he nurtured them—and soon became a dedicated volunteer, turning one rescue into a lifelong mission.</p>
+          </article>
+      
+          <article class="story-card">
+            <h3>A VIP Ride to Stardom</h3>
+            <p>Ira Shankman, a volunteer and retired educator, transported a pup named Sonny all the way to the Puppy Bowl XX. His road trip shows how volunteers go above and beyond—even across state lines—to give pets special opportunities.</p>
+          </article>
+      
+          <article class="story-card">
+            <h3>Fostering 165 Furry Friends</h3>
+            <p>Lizel Allen has fostered over 165 kittens since 2014. Her home became a launchpad for new lives, showing how fostering creates both safety and second chances.</p>
+          </article>
+      
+          <article class="story-card">
+            <h3>A Family's Foster Journey</h3>
+            <p>Laura Gallagher and her daughter Isabella fostered a mama dog and her pups—turning their home into a sanctuary. Their story proves that compassion can become a family tradition.</p>
+          </article>
+      
+          <div class="join-message">
+            <p>Inspired by these stories? You can make a difference too! Whether through volunteering, fostering, or simply sharing love—every act counts.</p>
+            <button onclick="scrollToSection('volunteer')">Join the Movement</button>
+          </div>
+      
+        </div>
+      </section>
+      
+
+    <section id="adopt">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-orange-500 mb-8">Adopt a Pet</h2>
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">
+      Every animal deserves a loving home. By adopting a pet, you're not just bringing home a furry friend—
+      you're giving them a second chance at life. Shelters and rescue homes are full of animals who have
+      been abandoned, lost, or born without a family. When you adopt, you help reduce the stray animal
+      population, break the cycle of overbreeding, and gain a loyal companion who will be forever grateful.
+    </p>
+
+    <p class="text-lg md:text-xl text-gray-800 leading-relaxed mt-6">
+      Adopted pets are known for their resilience, affection, and ability to bond deeply with humans.
+      Choosing adoption over buying not only saves a life but also supports a movement that values compassion
+      over commercialism. Be a hero—open your heart and home to a pet who’s waiting just for you. 🐶🐾
+    </p>
+  </div>
+      <div class="carousel" id="pet-carousel">
+        <!-- AI-suggested pet profiles injected via JS -->
+      </div>
+    </section>
+
+    <section id="chatbot-section">
+        <div class="chat-container">
+          <h2 class="chat-heading">🐾 Chat with PawBuddy</h2>
+          
+          <div id="chatbox"></div>
+          <div id="typing-indicator" style="display: none;">
+            <em>Typing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></em>
+          </div>
+          
+          <div class="chat-input-section">
+            <input type="text" id="userInput" placeholder="Type your message here..." onkeydown="if(event.key==='Enter') sendMessage()" />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </section>
+      
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pet-Friendly City. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
